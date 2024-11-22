@@ -28,9 +28,26 @@ void vivod(vector<vector<int>> vm, int n){
     }
 }
 
-int main(){
-    int n = 3;
-    vector<vector<int>> vm = vvod(n);
+void bestway(vector<vector<int>> vm, int n){
+    int prom = 0;
+    int r;
+    for(int f = 0; f < n; f++){
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                r = vm[i][j];
+                prom = vm[f][j] + vm[i][f];
+                if(prom <= r){
+                    vm[i][j] = prom;
+                }
+                
+            }
+        }
+    }
     vivod(vm, n);
-    return 0;
+}
+
+int main(){
+    int n = 4;
+    vector<vector<int>> vm = vvod(n);
+    bestway(vm, n);
 }
