@@ -42,7 +42,7 @@ vector<vector<int>> bestway(vector<vector<int>> vm, int n){
             }
         }
     }
-    vm;
+    return vm;
 }
 
 void longway(vector<vector<int>> vm, int n){
@@ -51,7 +51,7 @@ void longway(vector<vector<int>> vm, int n){
     for(int f = 0; f < n; f++){
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
-                if(vm[i][j]==vshort[i][f]-vshort[f][j]){
+                if(vshort[i][j]==vm[i][f]-vm[f][j]){
                     way.push_back(vm[i][j]);
                 }
             }
@@ -62,5 +62,5 @@ void longway(vector<vector<int>> vm, int n){
 int main(){
     int n = 4;
     vector<vector<int>> vm = vvod(n);
-    longway(vm, n);
+    vivod(bestway(vm, n), n);
 }
