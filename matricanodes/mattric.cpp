@@ -48,16 +48,13 @@ vector<vector<int>> bestway(vector<vector<int>> vm, int n){
 void longway(vector<vector<int>> vm, int n){
     vector<vector<int>> vshort = bestway(vm, n);
     vector<int> way;
+    int max = vshort[3][1];
     for(int f = 0; f < n; f++){
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < n; j++){
-                if(vshort[i][j]==vm[i][f]-vm[f][j]){
-                    way.push_back(vm[i][j]);
-                }
-            }
-        }
+        int s = max-vm[f][1];
+        
     }
 }
+
 
 int main(){
     int n = 4;
